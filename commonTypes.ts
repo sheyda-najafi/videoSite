@@ -122,7 +122,13 @@ import { Dispatch, SetStateAction } from "react";
 
 export type setState<T> = Dispatch<SetStateAction<T>>;
 
-
+export type IconProps = {
+  width?: string;
+  height?: string;
+  fill?: string;
+  onClick?: React.MouseEventHandler<SVGSVGElement>;
+  className?: string; // ✅ make optional
+};
 
 // ========================= sample
 // export type singleServiceData = {

@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  height: auto;
+  background-color: var(--primary-button);
+  border: unset;
+  color: var(--text-color);
+  padding: 8px var(--primary-padding);
+  border-radius: 8px;
+}
+
+.content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  height: auto;
+}
+
+.text {
+  margin: 0px;
+  margin-left: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: var(--primary-button-text)
+}
+
+.text.rtl {
+  margin: 0;
+  margin-right: 8px;
+}

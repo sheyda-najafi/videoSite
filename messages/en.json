@@ -4,5 +4,12 @@
     },
     "NotFoundPage": {
         "title": "title"
+    },
+    "Structure": {
+        "search": "Search",
+        "signin": "Sign in",
+        "notification": "Notification",
+        "theme": "Theme",
+        "more": "More"
     }
 }

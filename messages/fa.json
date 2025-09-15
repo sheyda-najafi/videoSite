@@ -4,5 +4,12 @@
     },
     "NotFoundPage": {
         "title": "عنوان"
+    },
+    "Structure": {
+        "search": "جستجو",
+        "signin": "ورود",
+        "notification": "اعلانات",
+        "theme": "پس‌زمینه",
+        "more": "بیشتر"
     }
 }

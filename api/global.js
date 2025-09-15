@@ -1,13 +1,22 @@
 import axios from "axios";
 import * as https from "https";
 import CookieFunction from "@/functions/cookieFunction";
+import { roboto, iransans } from "@/app/[locale]/fonts.ts";
 
-const tokenName = "didarinThemeColor"
+const tokenName = "didarinToken"
+const modeName = "didarinMode"
+const themeName = "didarinTheme"
 
 const config = {
-  RTL_LANGUAGES: ['ar', 'he', 'fa', 'ur'], // Arabic, Hebrew, Persian, Urdu
+  langs: [
+    { lang: 'en', fontFamily: roboto?.variable },
+    { lang: 'fa', fontFamily: iransans?.variable },
+  ],
+  RTL_LANGUAGES: ['ar', 'fa',], // Arabic, Hebrew, Persian, Urdu
   baseURL: process.env.url,
   tokenName: tokenName,
+  modeName: modeName,
+  themeName: themeName,
   isRTL: (x) => config.RTL_LANGUAGES.includes(x),
 
   udata:

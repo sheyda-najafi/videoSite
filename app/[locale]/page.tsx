@@ -1,7 +1,7 @@
 
 
 import LanguageSwitcher from "@/components/general/LanguageSwitcher";
-import ThemeSwitcher from "@/components/general/ThemeSwitcher";
+import ModeSwitcher from "@/components/general/ModeSwitcher";
 import { useTranslations } from "next-intl";
 // import { use } from 'react';
 import { setRequestLocale } from 'next-intl/server';
@@ -16,44 +16,8 @@ export default function HomePage({ params }: { params: { locale: string } }) {
     return (
         <>
             <LanguageSwitcher />
-            <ThemeSwitcher />
+            <ModeSwitcher />
             <h1>{t('welcome')}</h1>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
-            <p>h</p>
 
         </>
     );

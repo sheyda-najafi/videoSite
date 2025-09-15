@@ -9,19 +9,31 @@ export const LayoutContext = createContext();
 
 export const LayoutProvider = ({ children }) => {
     const [serverMessage, setServerMessage] = useState({ text: "" })
-    const [theme, setTheme] = useState('white');
+    const [mode, setMode] = useState("dark")
+    const [theme, setTheme] = useState('blue');
     const [dir, setDir] = useState("ltr")
     const locale = useLocale();
 
 
     useEffect(() => {
-        let themeValue = "white"
+        let modeValue = "dark"
         if (typeof window !== 'undefined' && typeof document !== 'undefined') {
             if (
-                CookieFunction('get', config.tokenName) !== null &&
-                CookieFunction('get', config.tokenName) != undefined
+                CookieFunction('get', config.modeName) !== null &&
+                CookieFunction('get', config.modeName) != undefined
             ) {
-                themeValue = CookieFunction('get', config.tokenName)
+                modeValue = CookieFunction('get', config.modeName)
+            }
+        }
+        setMode(modeValue)
+
+        let themeValue = "blue"
+        if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+            if (
+                CookieFunction('get', config.themeName) !== null &&
+                CookieFunction('get', config.themeName) != undefined
+            ) {
+                modeValue = CookieFunction('get', config.themeName)
             }
         }
         setTheme(themeValue)
@@ -32,10 +44,12 @@ export const LayoutProvider = ({ children }) => {
 
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', theme);
-    }, [theme])
+        document.documentElement.setAttribute('data-mode', mode);
+
+    }, [theme, mode])
 
     return (
-        <LayoutContext.Provider value={{ serverMessage, setServerMessage, theme, setTheme, dir, setDir }}>
+        <LayoutContext.Provider value={{ serverMessage, setServerMessage, theme, setTheme, dir, setDir, mode, setMode }}>
             {children}
         </LayoutContext.Provider>
     );

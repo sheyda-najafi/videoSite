@@ -1,18 +1,23 @@
 .container {
-  background-color: #fafafa;
   border-radius: 8px;
-  border: 1px solid #eeeeee;
+  box-sizing: border-box;
+  // border: 1px solid #eeeeee;
   display: inline-block;
   height: fit-content;
+  box-sizing: border-box;
+
 
   .wrapper {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 5px 10px;
+    align-items: stretch;
+    // padding: 5px 10px;
     height: 100%;
     color: #000;
+    border-radius: 8px;
+    box-sizing: border-box;
+
 
     .prefix,
     .affix {
@@ -23,8 +28,16 @@
 
     input {
       background-color: transparent;
-      width: 100%;
+      // width: 100%;
       border: none;
+      padding: 10px 16px;
+      padding-right: 0px;
+      box-sizing: border-box;
+    }
+
+    input.rtl {
+      padding: 10px 16px;
+      padding-left: 0px;
     }
 
     input:focus-visible {
@@ -32,10 +45,26 @@
     }
 
     input::placeholder {
-      color: #bababa;
+      color: var(--placeholder);
+      font-weight: 400;
       font-size: 16px;
+      line-height: 100%;
+      vertical-align: middle;
+
     }
   }
+}
+
+.affixContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  height: auto;
+}
+
+.inputClassName {
+  width: 100%
 }
 
 // @media only screen and (max-width: 576px) {

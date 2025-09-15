@@ -1,7 +1,7 @@
 .container {
-  cursor: pointer;
-  display: inline-block;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .text {

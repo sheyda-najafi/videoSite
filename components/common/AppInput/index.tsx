@@ -1,5 +1,6 @@
-import React, { forwardRef, InputHTMLAttributes, ReactNode } from 'react';
+import React, { forwardRef, InputHTMLAttributes, ReactNode, useContext } from 'react';
 import styles from './styles.module.scss';
+import { LayoutContext } from '@/context/LayoutContext';
 
 interface AppInputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'prefix'> {
@@ -9,14 +10,14 @@ interface AppInputProps
   prefix?: ReactNode;
   prefixClass?: string;
   affix?: ReactNode;
-  affix2?: ReactNode;
-  affix3?: ReactNode;
   affixStyle?: string;
   onClickInput?: () => void;
   themeColor?: string;
+  affixWrapper?: string;
 }
 
 const AppInput = forwardRef<HTMLInputElement, AppInputProps>((props, ref) => {
+  const { dir } = useContext(LayoutContext)
   const {
     className,
     extraWrapperClass,
@@ -24,47 +25,36 @@ const AppInput = forwardRef<HTMLInputElement, AppInputProps>((props, ref) => {
     prefix,
     prefixClass,
     affix,
-    affix2,
-    affix3,
     affixStyle,
     onClickInput,
     themeColor = 'default',
+    affixWrapper = "",
     ...inputProps
   } = props;
 
   return (
     <div
-      className={`${styles.container} ${className || ''} selectButton ${extraWrapperClass || ''}`}
+      className={`${styles.container} ${extraWrapperClass || ''}`}
       onClick={props.onClick}
     >
-      <div className={`${styles.wrapper} inputWrapperColor ${wrapper || ''}`}>
+      <div className={`${styles.wrapper}  ${wrapper || ''}`}>
         {prefix && <div className={prefixClass}>{prefix}</div>}
         <input
           {...inputProps}
           ref={ref}
-          className={props.className}
+          className={`${styles.inputClassName} ${props.className} ${styles[dir]}`}
           onClick={onClickInput}
           onFocus={props.onFocus ?? (() => console.log('h'))}
           onBlur={props.onBlur ?? (() => console.log('b'))}
         />
-        {affix && (
-          <div className={`${styles.affix} ${themeColor !== 'white' ? 'makeWhite' : ''}`}>
-            {affix}
-          </div>
-        )}
-        {affix3 && (
-          <div className={`${styles.affix} ${themeColor !== 'white' ? 'makeWhite' : ''}`}>
-            {affix3}
-          </div>
-        )}
-        {affix2 && (
-          <div
-            className={`${styles.affix} ${affixStyle ? affixStyle : themeColor !== 'white' ? 'makeWhite' : ''
-              }`}
-          >
-            {affix2}
-          </div>
-        )}
+        <div className={`${styles.affixContainer} ${affixWrapper}`}>
+          {affix && (
+            <div className={`${styles.affix} `}>
+              {affix}
+            </div>
+          )}
+
+        </div>
       </div>
     </div>
   );

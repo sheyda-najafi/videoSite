@@ -58,7 +58,7 @@ const AppImage: React.FC<AppImageProps> = ({
   ...rest
 }) => {
   return (
-    <div className={containerclassName} id={id}>
+    <div className={`${styles.container} ${containerclassName}`} id={id}>
       <img
         {...rest}
         src={src?.startsWith("/imgs/") ? src : `${process.env.IMAGE_URL}${src}`}
