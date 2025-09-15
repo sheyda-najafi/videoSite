@@ -7,3 +7,54 @@
   width: 100%;
   height: 100%;
 }
+
+.contentWrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: calc(100% - 56px);
+}
+
+.menu {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: var(--bg-second-color);
+  height: 100%;
+  transition: all 0.3s;
+}
+
+.content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  transition: all 0.3s;
+  overflow-y: auto;
+  scrollbar-color: var(--scrollbar-color) transparent;
+  scrollbar-width: 10px;
+
+}
+
+.menuCollapsed {
+  width: 60px;
+}
+
+.menuOpen {
+  width: 218px;
+}
+
+.contentCollapsed {
+  width: calc(100% - 218px)
+}
+
+.contentOpen {
+  width: calc(100% - 60px)
+}

@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
+import styles from "./styles.module.css";
 
-export default function Menu() {
+export default function Menu({ className = "" }) {
     return (
-        <div>Menu</div>
+        <div className={`${className} ${styles.container}`}>Menu</div>
     )
 }
