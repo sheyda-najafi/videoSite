@@ -1,23 +1,27 @@
 
 
-import LanguageSwitcher from "@/components/general/LanguageSwitcher";
-import ModeSwitcher from "@/components/general/ModeSwitcher";
-import { useTranslations } from "next-intl";
-// import { use } from 'react';
-import { setRequestLocale } from 'next-intl/server';
+import About from '@/components/page/About';
+import GeneralContent from '@/components/structure/GeneralContent';
+
+export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params; // ✅ await params
 
 
-export default function HomePage({ params }: { params: { locale: string } }) {
-    // const { locale } = use(params);
-    const locale = params?.locale;
-    setRequestLocale(locale);
-    const t = useTranslations('HomePage');
+    // Server-side API fetch
+    let aboutData = {};
+    try {
+        const res = await fetch(`https://api.hyggelanguage.ir/api/v0/blog/list?start=10&limit=10`, { next: { revalidate: 60 } });
+        if (res.ok) aboutData = await res.json();
+    } catch (err) {
+        console.warn('Failed to fetch about data:', err);
+    }
+
 
     return (
-        <>
-            <LanguageSwitcher />
-            <ModeSwitcher />
-            <h1>{t('welcome')}</h1>
-        </>
+        <GeneralContent locale={locale} messagesPath="about">
+            <About
+                data={aboutData}
+            />
+        </GeneralContent>
     );
 }

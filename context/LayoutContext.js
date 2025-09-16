@@ -33,7 +33,7 @@ export const LayoutProvider = ({ children }) => {
                 CookieFunction('get', config.themeName) !== null &&
                 CookieFunction('get', config.themeName) != undefined
             ) {
-                modeValue = CookieFunction('get', config.themeName)
+                themeValue = CookieFunction('get', config.themeName)
             }
         }
         setTheme(themeValue)

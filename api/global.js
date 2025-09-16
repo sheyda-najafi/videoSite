@@ -1,17 +1,19 @@
 import axios from "axios";
-import * as https from "https";
+// import * as https from "https";
 import CookieFunction from "@/functions/cookieFunction";
-import { roboto, iransans } from "@/app/[locale]/fonts.ts";
+// import { roboto, iransans } from "@/app/fonts";
 
 const tokenName = "didarinToken"
 const modeName = "didarinMode"
 const themeName = "didarinTheme"
 
 const config = {
-  langs: [
-    { lang: 'en', fontFamily: roboto?.variable },
-    { lang: 'fa', fontFamily: iransans?.variable },
-  ],
+  routingLangs: ['en', 'fa', 'fr', 'ar'],
+  defaultLocale: 'en',
+  // langs: [
+  //   { lang: 'en', fontFamily: roboto?.variable },
+  //   { lang: 'fa', fontFamily: iransans?.variable },
+  // ],
   RTL_LANGUAGES: ['ar', 'fa',], // Arabic, Hebrew, Persian, Urdu
   baseURL: process.env.url,
   tokenName: tokenName,
@@ -27,7 +29,7 @@ const config = {
   axiosHandle: (header = null) => {
     return axios.create({
       baseURL: `${config.baseURL}api/`,
-      httpsAgent: new https.Agent({ rejectUnauthorized: false }),
+      // httpsAgent: new https.Agent({ rejectUnauthorized: false }),
       headers: {
         Authorization: `Bearer ${config?.udata}`,
         "GATEWAY-ID": "30",
@@ -41,24 +43,58 @@ const config = {
     });
   },
 };
-const config2 = {
-  baseURL: process.env.url_backup,
-  // baseURL: "/", --> must change for main fanap server (pardis)
-
-
-  axiosHandle: (header = null) => {
-    return axios.create({
-      baseURL: `${config2.baseURL}api/`,
-      // httpsAgent: new https.Agent({ rejectUnauthorized: false }),
-      headers: {
-        Authorization: `Bearer ${config?.udata}`,
-        Accept: "application/json",
-
-        ...header,
-      },
-    });
-  },
-};
 export default config;
-export { config2 };
 
+
+// ===========
+
+// import axios from "axios";
+// import CookieFunction from "@/functions/cookieFunction";
+
+// const tokenName = "didarinToken"
+// const modeName = "didarinMode"
+// const themeName = "didarinTheme"
+
+// const config = {
+//   langs: [], // will be filled later
+//   RTL_LANGUAGES: ["ar", "fa"],
+//   baseURL: process.env.url,
+//   tokenName,
+//   modeName,
+//   themeName,
+//   isRTL: (x) => config.RTL_LANGUAGES.includes(x),
+
+//   udata:
+//     typeof window !== "undefined" &&
+//     typeof document !== "undefined" &&
+//     CookieFunction("get", tokenName),
+
+//   axiosHandle: (header = null) => {
+//     return axios.create({
+//       baseURL: `${config.baseURL}api/`,
+//       headers: {
+//         Authorization: `Bearer ${config?.udata}`,
+//         "GATEWAY-ID": "30",
+//         Accept: "application/json",
+//         ...header,
+//       },
+//     });
+//   },
+// };
+
+// const config2 = {
+//   baseURL: process.env.url_backup,
+//   axiosHandle: (header = null) => {
+//     return axios.create({
+//       baseURL: `${config2.baseURL}api/`,
+//       headers: {
+//         Authorization: `Bearer ${config?.udata}`,
+//         Accept: "application/json",
+//         ...header,
+//       },
+//     });
+//   },
+// };
+
+// export default config;
+// export { config2 };
