@@ -1,15 +1,15 @@
 {
-    "HomePage": {
-        "welcome": "خوش آمدید"
-    },
-    "NotFoundPage": {
-        "title": "یافت نشد"
-    },
-    "Structure": {
-        "search": "جستجو",
-        "signin": "ورود",
-        "notification": "اعلانات",
-        "theme": "پس‌زمینه",
-        "more": "بیشتر"
-    }
+  "HomePage": {
+    "welcome": "خوش آمدید"
+  },
+  "NotFoundPage": {
+    "title": "یافت نشد"
+  },
+  "Structure": {
+    "search": "جستجو",
+    "signin": "ورود",
+    "notification": "اعلانات",
+    "theme": "پس‌زمینه",
+    "more": "بیشتر"
+  }
 }

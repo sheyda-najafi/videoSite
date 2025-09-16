@@ -1,15 +1,15 @@
 {
-    "HomePage": {
-        "welcome": "Welcome"
-    },
-    "NotFoundPage": {
-        "title": "not found"
-    },
-    "Structure": {
-        "search": "Search",
-        "signin": "Sign in",
-        "notification": "Notification",
-        "theme": "Theme",
-        "more": "More"
-    }
+  "HomePage": {
+    "welcome": "Welcome"
+  },
+  "NotFoundPage": {
+    "title": "not found"
+  },
+  "Structure": {
+    "search": "Search",
+    "signin": "Sign in",
+    "notification": "Notification",
+    "theme": "Theme",
+    "more": "More"
+  }
 }

@@ -1,30 +1,20 @@
 'use client';
-import LanguageSwitcher from "@/components/general/LanguageSwitcher";
-import ModeSwitcher from "@/components/general/ModeSwitcher";
-import { Link } from "@/i18n/navigation";
-import { useTranslations } from "next-intl";
+import LanguageSwitcher from '@/components/general/LanguageSwitcher';
+import ModeSwitcher from '@/components/general/ModeSwitcher';
+import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 
+export default function Contact() {
+  const t = useTranslations('Page');
 
-export default function Contact(
-    // { data }: { data: any }
-) {
-    const t = useTranslations('Page');
-    console.log("t==", t)
-    // console.log("data==", data)
-    return (
-        <div>
-            <h1>{t('title')}</h1>
-            <LanguageSwitcher />
-            <ModeSwitcher />
-            <div >
-                <Link href="/about" >
-                    About Us
-                </Link>
-                {" "}
-                <Link href="/contact">
-                    Contact Us
-                </Link>
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <h1>{t('title')}</h1>
+      <LanguageSwitcher />
+      <ModeSwitcher />
+      <div>
+        <Link href="/about">About Us</Link> <Link href="/contact">Contact Us</Link>
+      </div>
+    </div>
+  );
 }

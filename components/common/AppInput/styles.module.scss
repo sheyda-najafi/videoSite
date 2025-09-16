@@ -6,7 +6,6 @@
   height: fit-content;
   box-sizing: border-box;
 
-
   .wrapper {
     width: 100%;
     display: flex;
@@ -17,7 +16,6 @@
     color: #000;
     border-radius: 8px;
     box-sizing: border-box;
-
 
     .prefix,
     .affix {
@@ -50,7 +48,6 @@
       font-size: 16px;
       line-height: 100%;
       vertical-align: middle;
-
     }
   }
 }
@@ -64,7 +61,7 @@
 }
 
 .inputClassName {
-  width: 100%
+  width: 100%;
 }
 
 // @media only screen and (max-width: 576px) {
@@ -77,11 +74,9 @@
         font-size: 12px;
         line-height: 20px;
 
-
         /* Gray 4 */
 
-        color: #BDBDBD;
-
+        color: #bdbdbd;
       }
 
       input::placeholder {

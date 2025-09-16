@@ -11,7 +11,7 @@ import {
   TouchEvent,
   WheelEvent,
   MouseEventHandler,
-} from "react";
+} from 'react';
 
 // ================ actions
 
@@ -73,41 +73,19 @@ export type OnTouchEndHandler = (event: TouchEvent<HTMLElement>) => void;
 export type OnWheelHandler = (event: WheelEvent<HTMLElement>) => void;
 
 /* ✅ Composition Events */
-export type OnCompositionStartHandler = (
-  event: CompositionEvent<HTMLElement>
-) => void;
-export type OnCompositionUpdateHandler = (
-  event: CompositionEvent<HTMLElement>
-) => void;
-export type OnCompositionEndHandler = (
-  event: CompositionEvent<HTMLElement>
-) => void;
+export type OnCompositionStartHandler = (event: CompositionEvent<HTMLElement>) => void;
+export type OnCompositionUpdateHandler = (event: CompositionEvent<HTMLElement>) => void;
+export type OnCompositionEndHandler = (event: CompositionEvent<HTMLElement>) => void;
 
 // textarea
-export type OnChangeHandlerTextarea = (
-  event: ChangeEvent<HTMLTextAreaElement>
-) => void;
-export type OnFocusHandlerTextarea = (
-  event: FocusEvent<HTMLTextAreaElement>
-) => void;
-export type OnBlurHandlerTextarea = (
-  event: FocusEvent<HTMLTextAreaElement>
-) => void;
-export type OnInputHandlerTextarea = (
-  event: FormEvent<HTMLTextAreaElement>
-) => void;
-export type OnKeyDownHandlerTextarea = (
-  event: KeyboardEvent<HTMLTextAreaElement>
-) => void;
-export type OnKeyUpHandlerTextarea = (
-  event: KeyboardEvent<HTMLTextAreaElement>
-) => void;
-export type OnKeyPressHandlerTextarea = (
-  event: KeyboardEvent<HTMLTextAreaElement>
-) => void;
-export type OnPasteHandlerTextarea = (
-  event: ClipboardEvent<HTMLTextAreaElement>
-) => void;
+export type OnChangeHandlerTextarea = (event: ChangeEvent<HTMLTextAreaElement>) => void;
+export type OnFocusHandlerTextarea = (event: FocusEvent<HTMLTextAreaElement>) => void;
+export type OnBlurHandlerTextarea = (event: FocusEvent<HTMLTextAreaElement>) => void;
+export type OnInputHandlerTextarea = (event: FormEvent<HTMLTextAreaElement>) => void;
+export type OnKeyDownHandlerTextarea = (event: KeyboardEvent<HTMLTextAreaElement>) => void;
+export type OnKeyUpHandlerTextarea = (event: KeyboardEvent<HTMLTextAreaElement>) => void;
+export type OnKeyPressHandlerTextarea = (event: KeyboardEvent<HTMLTextAreaElement>) => void;
+export type OnPasteHandlerTextarea = (event: ClipboardEvent<HTMLTextAreaElement>) => void;
 
 // image
 export type OnClickHandlerImage = MouseEventHandler<HTMLImageElement>;
@@ -118,7 +96,7 @@ export type onClickInputHandler = React.MouseEventHandler<HTMLInputElement>;
 export type onClickLink = (event: MouseEvent<HTMLAnchorElement>) => void;
 export type onMouseEnterLink = (event: MouseEvent<HTMLAnchorElement>) => void;
 export type onClickHandle = (v: number) => void;
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from 'react';
 
 export type setState<T> = Dispatch<SetStateAction<T>>;
 

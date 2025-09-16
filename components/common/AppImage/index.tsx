@@ -1,12 +1,12 @@
-import React, { ImgHTMLAttributes, MouseEventHandler } from "react";
-import styles from "./styles.module.scss";
+import React, { ImgHTMLAttributes, MouseEventHandler } from 'react';
+import styles from './styles.module.scss';
 
 type LoaderProps = {
   src: string;
 };
 
 const myLoader2 = ({ src }: LoaderProps): string => {
-  if (src?.startsWith("/imgs/")) {
+  if (src?.startsWith('/imgs/')) {
     return `${src}`;
   } else {
     return `${process.env.IMAGE_URL}${src}`;
@@ -15,7 +15,7 @@ const myLoader2 = ({ src }: LoaderProps): string => {
 
 type AppImageProps = {
   blurDataURL?: string;
-  placeholder?: "blur" | "empty";
+  placeholder?: 'blur' | 'empty';
   src?: string;
   alt?: string;
   height?: string | number;
@@ -36,41 +36,39 @@ type AppImageProps = {
 } & ImgHTMLAttributes<HTMLImageElement>; // allows other img props like style, id, etc.
 
 const AppImage: React.FC<AppImageProps> = ({
-  blurDataURL = "/imgs/blur.webp",
-  placeholder = "blur",
-  src = "/imgs/blur.webp",
-  alt = "image",
-  height = "300",
-  width = "300",
+  blurDataURL = '/imgs/blur.webp',
+  placeholder = 'blur',
+  src = '/imgs/blur.webp',
+  alt = 'image',
+  height = '300',
+  width = '300',
   unoptimized = false,
   layout,
   onClick,
-  className = "",
-  containerclassName = "",
-  text = "",
-  toolTipClassName = "",
-  toolTip = "",
-  textStyle = "nothing",
-  title = "",
+  className = '',
+  containerclassName = '',
+  text = '',
+  toolTipClassName = '',
+  toolTip = '',
+  textStyle = 'nothing',
+  title = '',
   titleStyle,
   large = false,
-  id = "",
+  id = '',
   ...rest
 }) => {
   return (
     <div className={`${styles.container} ${containerclassName}`} id={id}>
       <img
         {...rest}
-        src={src?.startsWith("/imgs/") ? src : `${process.env.IMAGE_URL}${src}`}
+        src={src?.startsWith('/imgs/') ? src : `${process.env.IMAGE_URL}${src}`}
         alt={alt}
         height={height}
         width={width}
         className={className}
         onClick={onClick}
       />
-      {title && (
-        <span className={`${titleStyle} ${styles.text}`}>{title}</span>
-      )}
+      {title && <span className={`${titleStyle} ${styles.text}`}>{title}</span>}
       {toolTip && <span className={toolTipClassName}>{toolTip}</span>}
       {text && <span className={`${styles.text} ${textStyle}`}>{text}</span>}
     </div>

@@ -1,24 +1,23 @@
 .wrapper {
-    background-color: var(--bg-color);
-    width: 42%;
-    max-width: 604px;
-
+  background-color: var(--bg-color);
+  width: 42%;
+  max-width: 604px;
 }
 
 .wrapper * {
-    color: var(--text-color)
+  color: var(--text-color);
 }
 
 .affixWrapper {
-    background-color: var(--tag-bg-color);
-    padding: 8px 20px;
-    border: unset;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+  background-color: var(--tag-bg-color);
+  padding: 8px 20px;
+  border: unset;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .affixWrapper.rtl {
-    border-radius: unset;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+  border-radius: unset;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }

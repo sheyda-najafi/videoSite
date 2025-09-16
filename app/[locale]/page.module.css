@@ -40,7 +40,6 @@
   overflow-y: auto;
   scrollbar-color: var(--scrollbar-color) transparent;
   scrollbar-width: 10px;
-
 }
 
 .menuCollapsed {
@@ -52,9 +51,9 @@
 }
 
 .contentCollapsed {
-  width: calc(100% - 218px)
+  width: calc(100% - 218px);
 }
 
 .contentOpen {
-  width: calc(100% - 60px)
+  width: calc(100% - 60px);
 }

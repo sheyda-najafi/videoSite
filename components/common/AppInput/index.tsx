@@ -2,8 +2,7 @@ import React, { forwardRef, InputHTMLAttributes, ReactNode, useContext } from 'r
 import styles from './styles.module.scss';
 import { LayoutContext } from '@/context/LayoutContext';
 
-interface AppInputProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'prefix'> {
+interface AppInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'prefix'> {
   className?: string;
   extraWrapperClass?: string;
   wrapper?: string;
@@ -17,7 +16,7 @@ interface AppInputProps
 }
 
 const AppInput = forwardRef<HTMLInputElement, AppInputProps>((props, ref) => {
-  const { dir } = useContext(LayoutContext)
+  const { dir } = useContext(LayoutContext);
   const {
     className,
     extraWrapperClass,
@@ -28,15 +27,12 @@ const AppInput = forwardRef<HTMLInputElement, AppInputProps>((props, ref) => {
     affixStyle,
     onClickInput,
     themeColor = 'default',
-    affixWrapper = "",
+    affixWrapper = '',
     ...inputProps
   } = props;
 
   return (
-    <div
-      className={`${styles.container} ${extraWrapperClass || ''}`}
-      onClick={props.onClick}
-    >
+    <div className={`${styles.container} ${extraWrapperClass || ''}`} onClick={props.onClick}>
       <div className={`${styles.wrapper}  ${wrapper || ''}`}>
         {prefix && <div className={prefixClass}>{prefix}</div>}
         <input
@@ -48,12 +44,7 @@ const AppInput = forwardRef<HTMLInputElement, AppInputProps>((props, ref) => {
           onBlur={props.onBlur ?? (() => console.log('b'))}
         />
         <div className={`${styles.affixContainer} ${affixWrapper}`}>
-          {affix && (
-            <div className={`${styles.affix} `}>
-              {affix}
-            </div>
-          )}
-
+          {affix && <div className={`${styles.affix} `}>{affix}</div>}
         </div>
       </div>
     </div>

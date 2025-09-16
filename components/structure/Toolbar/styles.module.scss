@@ -1,22 +1,22 @@
 .container {
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    background-color: var(--bg-second-color);
-    min-height: 56px;
-    padding: 8px var(--primary-padding)
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  background-color: var(--bg-second-color);
+  min-height: 56px;
+  padding: 8px var(--primary-padding);
 }
 
 .sideContainer {
-    box-sizing: border-box;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .logo {
-    margin: 0 var(--primary-padding);
+  margin: 0 var(--primary-padding);
 }

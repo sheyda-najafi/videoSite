@@ -1,11 +1,11 @@
-import axios from "axios";
+import axios from 'axios';
 // import * as https from "https";
-import CookieFunction from "@/functions/cookieFunction";
+import CookieFunction from '@/functions/cookieFunction';
 // import { roboto, iransans } from "@/app/fonts";
 
-const tokenName = "didarinToken"
-const modeName = "didarinMode"
-const themeName = "didarinTheme"
+const tokenName = 'didarinToken';
+const modeName = 'didarinMode';
+const themeName = 'didarinTheme';
 
 const config = {
   routingLangs: ['en', 'fa', 'fr', 'ar'],
@@ -14,7 +14,7 @@ const config = {
   //   { lang: 'en', fontFamily: roboto?.variable },
   //   { lang: 'fa', fontFamily: iransans?.variable },
   // ],
-  RTL_LANGUAGES: ['ar', 'fa',], // Arabic, Hebrew, Persian, Urdu
+  RTL_LANGUAGES: ['ar', 'fa'], // Arabic, Hebrew, Persian, Urdu
   baseURL: process.env.url,
   tokenName: tokenName,
   modeName: modeName,
@@ -22,9 +22,9 @@ const config = {
   isRTL: (x) => config.RTL_LANGUAGES.includes(x),
 
   udata:
-    typeof window !== "undefined" &&
-    typeof document !== "undefined" &&
-    CookieFunction("get", tokenName),
+    typeof window !== 'undefined' &&
+    typeof document !== 'undefined' &&
+    CookieFunction('get', tokenName),
 
   axiosHandle: (header = null) => {
     return axios.create({
@@ -32,19 +32,18 @@ const config = {
       // httpsAgent: new https.Agent({ rejectUnauthorized: false }),
       headers: {
         Authorization: `Bearer ${config?.udata}`,
-        "GATEWAY-ID": "30",
-        Accept: "application/json",
-        mode: "no-cors",
-        "Access-Control-Allow-Origin": "*",
+        'GATEWAY-ID': '30',
+        Accept: 'application/json',
+        mode: 'no-cors',
+        'Access-Control-Allow-Origin': '*',
         withCredentials: false,
-        cache: "default",
+        cache: 'default',
         ...header,
       },
     });
   },
 };
 export default config;
-
 
 // ===========
 
