@@ -1,7 +1,6 @@
 .container {
   border-radius: 8px;
   box-sizing: border-box;
-  // border: 1px solid #eeeeee;
   display: inline-block;
   height: fit-content;
   box-sizing: border-box;
@@ -11,7 +10,6 @@
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    // padding: 5px 10px;
     height: 100%;
     color: #000;
     border-radius: 8px;
@@ -26,15 +24,14 @@
 
     input {
       background-color: transparent;
-      // width: 100%;
       border: none;
-      padding: 10px 16px;
+      padding: 10px var(--primary-padding);
       padding-right: 0px;
       box-sizing: border-box;
     }
 
     input.rtl {
-      padding: 10px 16px;
+      padding: 10px var(--primary-padding);
       padding-left: 0px;
     }
 
@@ -45,7 +42,7 @@
     input::placeholder {
       color: var(--placeholder);
       font-weight: 400;
-      font-size: 16px;
+      font-size: var(--primary-padding);
       line-height: 100%;
       vertical-align: middle;
     }
@@ -64,7 +61,6 @@
   width: 100%;
 }
 
-// @media only screen and (max-width: 576px) {
 @media screen and (max-width: 800px) {
   .container {
     .wrapper {

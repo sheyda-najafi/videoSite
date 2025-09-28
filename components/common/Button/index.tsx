@@ -19,13 +19,15 @@ const Button = ({
 }: ButtonType) => {
   const { dir } = useContext(LayoutContext);
   return (
-    <button onClick={onClick} className={`${styles.container}${` `}${className}`}>
+    <button onClick={onClick} className={`${styles.container}${` `} ${className}`}>
       {loading ? (
         <Loader />
       ) : (
         <div className={`${styles.content}`}>
           {icon && icon}
-          <span className={`${styles.text} ${styles[dir]}`}>{children}</span>
+          <span className={`${styles.text} ${styles[dir]} ${icon && styles.margin}`}>
+            {children}
+          </span>
         </div>
       )}
     </button>

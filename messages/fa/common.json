@@ -1,7 +1,4 @@
 {
-  "HomePage": {
-    "welcome": "خوش آمدید"
-  },
   "NotFoundPage": {
     "title": "یافت نشد"
   },
@@ -10,6 +7,14 @@
     "signin": "ورود",
     "notification": "اعلانات",
     "theme": "پس‌زمینه",
-    "more": "بیشتر"
+    "more": "بیشتر",
+    "home": "خانه",
+    "channels": "کانال‌ها",
+    "playlists": "فهرست‌های پخش",
+    "categories": "دسته‌بندی‌ها",
+    "channelManagement": "مدیریت کانال",
+    "menuMessage": " به منظور عضویت در کانال ارسال پیام و آپلود ویدیو وارد شوید.",
+    "signup-login": "ثبت‌نام / ورود",
+    "getPro": "دانلود pro"
   }
 }

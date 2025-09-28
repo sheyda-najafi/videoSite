@@ -5,6 +5,7 @@ import { LayoutContext } from '@/context/LayoutContext';
 import styles from './page.module.css';
 import Toolbar from '@/components/structure/Toolbar';
 import Menu from '@/components/structure/Menu';
+import ModalsContainer from '@/components/modals/ModalsContainer';
 
 const UiLayout = ({ children }: { children: React.ReactNode }) => {
   const { serverMessage } = useContext(LayoutContext);
@@ -25,6 +26,7 @@ const UiLayout = ({ children }: { children: React.ReactNode }) => {
         <div className={`${styles.contentWrapper}`}>
           <Menu
             className={`${styles.menu} ${collapsed ? styles.menuCollapsed : styles.menuOpen}`}
+            collapsed={collapsed}
           />
           <div
             className={`${styles.content} ${!collapsed ? styles.contentCollapsed : styles.contentOpen}`}
@@ -32,6 +34,7 @@ const UiLayout = ({ children }: { children: React.ReactNode }) => {
             {children}
           </div>
         </div>
+        <ModalsContainer />
       </div>
     </div>
   );

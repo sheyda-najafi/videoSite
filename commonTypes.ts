@@ -108,15 +108,16 @@ export type IconProps = {
   className?: string; // ✅ make optional
 };
 
-// ========================= sample
-// export type singleServiceData = {
-//   id: number;
-//   title: string;
-//   createdAt: string;
-//   price: string;
-//   type?: number | string;
-// };
-// export type data = {
-//   number: string;
-//   dataArray: singleServiceData[];
-// };
+// =========================
+
+export type video = {
+  id: number;
+  title: string;
+  channel: { name: string; fileImage: { name: string }; uuid: string; verified: boolean };
+  createdAt: Date;
+  views: number;
+  fileImage: { name: string };
+  uuid?: string | number;
+};
+
+export type TranslationFunction = (key: string, values?: Record<string, any>) => string;

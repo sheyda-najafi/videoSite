@@ -1,0 +1,7 @@
+.container {
+  width: 2px;
+  height: 2px;
+  background-color: var(--text-third-color);
+  margin: 0px 4px;
+  border-radius: 50%;
+}

@@ -20,3 +20,33 @@
 .logo {
   margin: 0 var(--primary-padding);
 }
+.sideContainer svg {
+  cursor: pointer;
+}
+.iconContainer {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  height: auto;
+}
+.iconContainer .icon {
+  margin: 0px;
+  margin-left: var(--primary-padding);
+}
+.iconContainer.rtl .icon {
+  margin: 0px;
+  margin-right: var(--primary-padding);
+}
+.button {
+  margin: 0px;
+  margin-left: var(--primary-padding);
+}
+.button.rtl {
+  margin: 0px;
+  margin-right: var(--primary-padding);
+}
+.changeModeIcon {
+  position: relative;
+}

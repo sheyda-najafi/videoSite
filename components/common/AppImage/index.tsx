@@ -5,14 +5,6 @@ type LoaderProps = {
   src: string;
 };
 
-const myLoader2 = ({ src }: LoaderProps): string => {
-  if (src?.startsWith('/imgs/')) {
-    return `${src}`;
-  } else {
-    return `${process.env.IMAGE_URL}${src}`;
-  }
-};
-
 type AppImageProps = {
   blurDataURL?: string;
   placeholder?: 'blur' | 'empty';
@@ -33,15 +25,15 @@ type AppImageProps = {
   titleStyle?: string;
   large?: boolean;
   id?: string;
-} & ImgHTMLAttributes<HTMLImageElement>; // allows other img props like style, id, etc.
+} & ImgHTMLAttributes<HTMLImageElement>;
 
 const AppImage: React.FC<AppImageProps> = ({
   blurDataURL = '/imgs/blur.webp',
   placeholder = 'blur',
   src = '/imgs/blur.webp',
   alt = 'image',
-  height = '300',
-  width = '300',
+  height = 30,
+  width = 30,
   unoptimized = false,
   layout,
   onClick,
@@ -67,6 +59,7 @@ const AppImage: React.FC<AppImageProps> = ({
         width={width}
         className={className}
         onClick={onClick}
+        id={id}
       />
       {title && <span className={`${titleStyle} ${styles.text}`}>{title}</span>}
       {toolTip && <span className={toolTipClassName}>{toolTip}</span>}

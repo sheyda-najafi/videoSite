@@ -1,7 +1,4 @@
 {
-  "HomePage": {
-    "welcome": "Welcome"
-  },
   "NotFoundPage": {
     "title": "not found"
   },
@@ -10,6 +7,14 @@
     "signin": "Sign in",
     "notification": "Notification",
     "theme": "Theme",
-    "more": "More"
+    "more": "More",
+    "home": "Home",
+    "channels": "Channels",
+    "playlists": "Playlists",
+    "categories": "Categories",
+    "channelManagement": "Channel Management",
+    "menuMessage": "Log in to subscribe channels, comment and upload your videos.",
+    "signup-login": "Sign in / Login",
+    "getPro": "Get Pro"
   }
 }

@@ -43,7 +43,7 @@
 }
 
 .menuCollapsed {
-  width: 60px;
+  width: 40px;
 }
 
 .menuOpen {
@@ -55,5 +55,5 @@
 }
 
 .contentOpen {
-  width: calc(100% - 60px);
+  width: calc(100% - 40px);
 }

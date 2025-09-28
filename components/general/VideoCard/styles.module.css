@@ -1,0 +1,72 @@
+.container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.imageContainer {
+  aspect-ratio: 1.92;
+  width: 100%;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+.content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: auto;
+  margin-top: 12px;
+}
+
+.channelImage {
+  border-radius: 50%;
+  width: auto !important;
+}
+.channelImage img {
+  border-radius: 50%;
+}
+.textContainer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  margin-left: 12px;
+  margin-right: var(--primary-padding);
+}
+.textContainer.rtl {
+  margin-right: 12px;
+  margin-left: var(--primary-padding);
+}
+.title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  height: 44px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+}
+.details {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+}
+.details * {
+  color: var(--text-third-color);
+}
+.verfied {
+  margin: 0px 4px;
+}

@@ -1,7 +1,7 @@
 'use client';
+import AppLink from '@/components/common/AppLink';
 import LanguageSwitcher from '@/components/general/LanguageSwitcher';
-import ModeSwitcher from '@/components/general/ModeSwitcher';
-import { Link } from '@/i18n/navigation';
+import ModeThemeSwitcher from '@/components/general/ModeThemeSwitcher';
 import { useTranslations } from 'next-intl';
 
 export default function Contact() {
@@ -11,9 +11,9 @@ export default function Contact() {
     <div>
       <h1>{t('title')}</h1>
       <LanguageSwitcher />
-      <ModeSwitcher />
+      <ModeThemeSwitcher />
       <div>
-        <Link href="/about">About Us</Link> <Link href="/contact">Contact Us</Link>
+        <AppLink href="/about">About Us</AppLink> <AppLink href="/contact">Contact Us</AppLink>
       </div>
     </div>
   );

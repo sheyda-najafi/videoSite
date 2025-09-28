@@ -27,21 +27,7 @@ export default function AppSearch({ callbackSearch }: AppSearchType) {
     <AppInput
       affix={
         searchInput == '' ? (
-          <ToolbarIcons.SearchIcon
-            onClick={() => {
-              // if (searchInput?.length != 0) {
-              //     addSuggestFunction();
-              //     findSuggest();
-              //     setShowSearchedList(false);
-              //     router.push(`/search/${searchInput?.trim()}?`);
-              //     // setShowSuggestModalToolbar(false);
-              //     router.push(`/search/${searchInput?.trim()}?`);
-              // } else {
-              //     setShowSearchedList(false);
-              //     router.push(`/search/ `);
-              // }
-            }}
-          />
+          <ToolbarIcons.SearchIcon onClick={() => {}} />
         ) : (
           <ToolbarIcons.CloseIcon
             onClick={() => {

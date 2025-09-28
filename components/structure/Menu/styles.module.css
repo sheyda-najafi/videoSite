@@ -1,0 +1,69 @@
+.container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 8px 0px;
+}
+.itemsContainer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0px var(----primary-padding);
+}
+.menuItem {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 8px;
+  border-radius: 8px;
+}
+.menuItem svg {
+  min-width: 24px;
+}
+.menuItem span {
+  margin: 0;
+  margin-left: 8px;
+
+  font-weight: 500;
+
+  font-size: 14px;
+
+  line-height: 20px;
+}
+.menuItem:hover {
+  background-color: var(--selected-button);
+}
+.menuItem.rtl span {
+  margin: 0px;
+  margin-right: 8px;
+}
+.menuMessage {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: normal;
+  color: var(--text-third-color);
+  padding: var(--primary-padding);
+}
+.buttonContainer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px var(--primary-padding);
+  width: 100%;
+}
+
+.buttonContainer button {
+  width: 100%;
+  margin-bottom: 8px;
+}

@@ -11,7 +11,16 @@ export const LayoutProvider = ({ children }) => {
   const [mode, setMode] = useState('dark');
   const [theme, setTheme] = useState('blue');
   const [dir, setDir] = useState('ltr');
+  const [trigger, setTrigger] = useState();
   const locale = useLocale();
+  const [login, setLogin] = useState(
+    typeof window !== 'undefined' &&
+      typeof document !== 'undefined' &&
+      CookieFunction('get', config.tokenName),
+  );
+  const loginFunction = () => {
+    setTrigger('login');
+  };
 
   useEffect(() => {
     let modeValue = 'dark';
@@ -46,7 +55,21 @@ export const LayoutProvider = ({ children }) => {
 
   return (
     <LayoutContext.Provider
-      value={{ serverMessage, setServerMessage, theme, setTheme, dir, setDir, mode, setMode }}
+      value={{
+        serverMessage,
+        setServerMessage,
+        theme,
+        setTheme,
+        dir,
+        setDir,
+        mode,
+        setMode,
+        trigger,
+        setTrigger,
+        login,
+        setLogin,
+        loginFunction,
+      }}
     >
       {children}
     </LayoutContext.Provider>

@@ -1,0 +1,13 @@
+{
+  "video": {
+    "fewsecondsago": "  چند ثانیه پیش",
+    "secondsago": " ثانیه پیش",
+    "minutesago": " دقیقه پیش",
+    "hoursago": " ساعت پیش",
+    "daysago": " روز پیش",
+    "weeksago": " هفته پیش",
+    "monthsago": " ماه پیش",
+    "yearsago": " سال پیش",
+    "view": "بازدید"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "video": {
+    "fewsecondsago": "a few seconds ago",
+    "secondsago": "seconds ago",
+    "minutesago": "minute ago",
+    "hoursago": "hour ago",
+    "daysago": "day ago",
+    "weeksago": "week ago",
+    "monthsago": "month ago",
+    "yearsago": "year ago",
+    "view": "views"
+  }
+}

@@ -1,0 +1,44 @@
+.container {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  background-image: url('/imgs/home/hero.jpg');
+  background-size: cover;
+  margin-bottom: var(--primary-padding);
+}
+.cover {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  background: linear-gradient(
+    172.23deg,
+    #000000 4.94%,
+    rgba(0, 0, 0, 0.35) 45.74%,
+    rgba(0, 0, 0, 0.9) 92.94%
+  );
+  padding: var(--primary-padding);
+  aspect-ratio: 2.71;
+}
+.title {
+  max-width: 700px;
+  margin-top: var(--primary-padding);
+  font-weight: 700;
+  font-size: 58px;
+  line-height: 72px;
+  letter-spacing: -1.5px;
+  color: #fff;
+}
+.text {
+  color: #fff;
+}
+@media only screen and (max-width: 800px) {
+  .title {
+    font-size: 40px;
+    line-height: normal;
+  }
+}
