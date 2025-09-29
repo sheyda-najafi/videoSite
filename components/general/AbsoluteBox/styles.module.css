@@ -1,0 +1,17 @@
+.container {
+  box-sizing: border-box;
+  width: auto;
+  position: absolute;
+  top: 0;
+  right: unset;
+  left: 100%;
+  background: var(--select-dropdown);
+  z-index: 1000;
+  min-height: 100px;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+.container.rtl {
+  left: unset;
+  right: 100%;
+}

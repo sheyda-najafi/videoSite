@@ -115,9 +115,40 @@ export type video = {
   title: string;
   channel: { name: string; fileImage: { name: string }; uuid: string; verified: boolean };
   createdAt: Date;
-  views: number;
+  view: number;
   fileImage: { name: string };
   uuid?: string | number;
 };
 
 export type TranslationFunction = (key: string, values?: Record<string, any>) => string;
+
+export type channel = {
+  id: number;
+  title: string;
+  createdAt: Date;
+  view: number;
+  fileImage: { name: string };
+  fileWideImage: { name: string };
+  uuid?: string | number;
+  verified?: boolean;
+  subscriber?: number | string;
+  videos?: number | string;
+};
+export interface CategoryItem {
+  id: string;
+  title: string;
+  slug: string;
+}
+
+export type ProfileInfo = {
+  id: number;
+  title: string;
+  createdAt: Date;
+  view: number;
+  fileImage: { name: string };
+  fileWideImage: { name: string };
+  uuid?: string | number;
+  verified?: boolean;
+  subscriber?: number | string;
+  videos?: number | string;
+};

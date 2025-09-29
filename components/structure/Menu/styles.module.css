@@ -13,7 +13,7 @@
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-  padding: 0px var(----primary-padding);
+  padding: 0px var(--primary-padding);
 }
 .menuItem {
   box-sizing: border-box;
@@ -24,7 +24,9 @@
   width: 100%;
   height: auto;
   padding: 8px;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
+  position: relative;
+  cursor: pointer;
 }
 .menuItem svg {
   min-width: 24px;
@@ -66,4 +68,7 @@
 .buttonContainer button {
   width: 100%;
   margin-bottom: 8px;
+}
+.activeMenu {
+  background-color: var(--selected-button);
 }

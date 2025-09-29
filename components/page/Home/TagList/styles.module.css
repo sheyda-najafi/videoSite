@@ -14,7 +14,7 @@
   margin-bottom: 8px;
   cursor: pointer;
   padding: 8px var(--primary-padding);
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   color: var(--text-color);
 }
 .button.rtl {

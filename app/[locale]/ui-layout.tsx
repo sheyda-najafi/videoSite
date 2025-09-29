@@ -31,7 +31,7 @@ const UiLayout = ({ children }: { children: React.ReactNode }) => {
           <div
             className={`${styles.content} ${!collapsed ? styles.contentCollapsed : styles.contentOpen}`}
           >
-            {children}
+            <div className={`${styles.innerContent}`}>{children}</div>
           </div>
         </div>
         <ModalsContainer />

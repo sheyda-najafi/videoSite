@@ -1,0 +1,9 @@
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 6.33;
+}

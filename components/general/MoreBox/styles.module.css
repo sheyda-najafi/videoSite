@@ -1,0 +1,10 @@
+.container {
+  width: auto;
+  display: flex;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+}
+.icon {
+  cursor: pointer;
+}

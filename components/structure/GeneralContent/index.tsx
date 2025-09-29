@@ -74,7 +74,7 @@ export default function GeneralContent({
   // console.log('GeneralContent messages:', JSON.stringify(messages, null, 2)); // Debug
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
-      <div className={`wrapperStyle ${page ? `pageStyle` : ''}`}>{children}</div>
+      <div className={`wrapperStyle ${page ? 'pageStyle' : ''}`}>{children}</div>
     </NextIntlClientProvider>
   );
 }

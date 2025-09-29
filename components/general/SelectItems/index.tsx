@@ -4,7 +4,7 @@ import { LayoutContext } from '@/context/LayoutContext';
 
 type SelectItemType = {
   list: { id: string; title: string; icon: ReactNode }[];
-  className?: '';
+  className?: string;
   onClick: (x: any) => void;
   selected?: string | number;
   id?: string;
@@ -46,7 +46,7 @@ export default function SelectItems({
       {list?.map((item, index) => (
         <li
           key={item?.id}
-          className={selected == item?.id ? styles.selected : ''}
+          className={`${selected == item?.id ? styles.selected : ''} ${styles.item}`}
           onClick={() => {
             onClick(item);
           }}

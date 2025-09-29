@@ -35,15 +35,24 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  height: 100%;
+  height: calc(100%);
   transition: all 0.3s;
   overflow-y: auto;
-  scrollbar-color: var(--scrollbar-color) transparent;
-  scrollbar-width: 10px;
+}
+
+.innerContent {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: auto;
+  width: 100%;
+  padding-bottom: 30px;
 }
 
 .menuCollapsed {
-  width: 40px;
+  width: 70px;
 }
 
 .menuOpen {
@@ -55,5 +64,5 @@
 }
 
 .contentOpen {
-  width: calc(100% - 40px);
+  width: calc(100% - 70px);
 }

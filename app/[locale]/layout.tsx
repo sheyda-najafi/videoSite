@@ -1,5 +1,5 @@
 import './globals.css';
-import './theme.scss';
+// import './theme.scss';
 import type { Metadata } from 'next';
 import { setRequestLocale } from 'next-intl/server';
 import { hasLocale } from 'next-intl';
@@ -30,7 +30,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   setRequestLocale(locale);
 
-  const messages = await loadI18nTranslations('/messages/', locale, ['common']);
+  const messages = await loadI18nTranslations('/messages/', locale, ['common', 'general']);
 
   const fontClass = getFontByLocale(locale);
   return (

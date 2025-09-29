@@ -9,5 +9,23 @@
     "monthsago": "month ago",
     "yearsago": "year ago",
     "view": "views"
+  },
+  "common": {
+    "channels": "Channels",
+    "showAll": "Show All",
+    "latest": "Latest",
+    "all": "All",
+    "music": "Music",
+    "sport": " Sport",
+    "education": "Education",
+    "game": "Game",
+    "news": "News",
+    "technology": "Technology",
+    "upload": "Upload",
+    "remove": "Remove"
+  },
+  "channel": {
+    "subscribers": "subscribers",
+    "videos": "videos"
   }
 }

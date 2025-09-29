@@ -129,7 +129,7 @@ const ToolbarIcons = {
     width = '24px',
     height = '24px',
     fill = 'var(--icon-color)',
-    onClick,
+    onClick = null,
     className = '',
   }) => (
     <svg
@@ -306,7 +306,7 @@ const ToolbarIcons = {
     width = '24px',
     height = '24px',
     fill = 'var(--primary-button)',
-    onClick,
+    onClick = null,
     className = '',
   }) => (
     <svg

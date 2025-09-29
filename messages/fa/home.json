@@ -2,14 +2,7 @@
   "HomePage": {
     "welcome": "خوش آمدید",
     "title": "عنوان",
-    "all": "همه",
-    "music": "موسیقی",
-    "sport": " ورزش",
-    "education": "آموزش",
-    "game": "بازی",
-    "news": "خبر",
-    "technology": "تکنولوژی",
-    "showAll": "شاهده همه",
-    "latest": "جدیدترین‌ها"
+    "topfive": "بهترین‌ها",
+    "Suggest": "پیشنهاد"
   }
 }

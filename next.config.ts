@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
     apiUrl: `${process.env.BACKEND_URL}/api`,
     IMAGE_URL: `${process.env.BACKEND_URL}/file/images/`,
   },
+  images: {
+    domains: ['nodido.com', 'api.nodido.com'],
+  },
   eslint: {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.

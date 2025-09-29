@@ -3,6 +3,7 @@ import styles from './styles.module.css';
 import Button from '@/components/common/Button';
 import { LayoutContext } from '@/context/LayoutContext';
 import AppLink from '@/components/common/AppLink';
+import { TranslationFunction } from '@/commonTypes';
 
 type tagItemType = {
   id: string | number;
@@ -10,7 +11,7 @@ type tagItemType = {
   href?: string;
 };
 type TagListType = {
-  t: any;
+  t: TranslationFunction;
   list?: null | tagItemType[];
   onClick?: (x: any) => void;
   active?: number;

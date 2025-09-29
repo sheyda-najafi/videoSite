@@ -16,6 +16,9 @@
   height: auto;
   margin-bottom: var(--primary-padding);
 }
+.channelsHead {
+  margin-bottom: 16px;
+}
 .showAll {
   color: var(--link-color);
 }
@@ -28,20 +31,57 @@
   width: 100%;
   height: auto;
 }
-
+.topFive {
+  grid-template-columns: repeat(3, 1fr);
+}
+.channel {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 56px var(--primary-padding);
+}
+.wrapper {
+  width: 100%;
+  padding-top: 40px;
+  overflow-x: auto;
+}
 @media screen and (max-width: 1100px) {
-  .cardSection {
+  /* .cardSection {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .topFive {
+    grid-template-columns: repeat(2, 1fr);
+  } */
+  .cardSection {
+    display: flex;
+    width: 2000px;
+  }
+  .channel {
+    display: flex;
+    width: 1100px;
+  }
+  .topFive {
+    display: flex;
+    width: 1100px;
+  }
+
+  .channelCard {
+    width: 20%;
+  }
+  .videoCard {
+    width: 25%;
+  }
+  .topfiveCard {
+    width: 100%;
   }
 }
 
-@media screen and (max-width: 800px) {
-  .cardSection {
-    grid-template-columns: repeat(2, 1fr);
+/* @media screen and (max-width: 800px) {
+  .cardSection,
+  .topFive {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 @media screen and (max-width: 700px) {
   .cardSection {
     grid-template-columns: repeat(1, 1fr);
   }
-}
+} */

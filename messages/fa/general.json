@@ -9,5 +9,23 @@
     "monthsago": " ماه پیش",
     "yearsago": " سال پیش",
     "view": "بازدید"
+  },
+  "common": {
+    "channels": "کانال‌ها",
+    "showAll": "مشاهده همه",
+    "latest": "جدیدترین‌ها",
+    "all": "همه",
+    "music": "موسیقی",
+    "sport": " ورزش",
+    "education": "آموزش",
+    "game": "بازی",
+    "news": "خبر",
+    "technology": "تکنولوژی",
+    "upload": "آپلود",
+    "remove": "حذف"
+  },
+  "channel": {
+    "subscribers": "دنبال‌کننده",
+    "videos": "ویدیو"
   }
 }

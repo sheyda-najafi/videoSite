@@ -1,4 +1,4 @@
-import React, { ChangeEvent, Fragment, KeyboardEvent, useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styles from './styles.module.scss';
 import ToolbarIcons from '@/icons/toolbar';
 import { useTranslations } from 'next-intl';
@@ -10,15 +10,20 @@ import SelectItems from '@/components/general/SelectItems';
 import CookieFunction from '@/functions/cookieFunction';
 import config from '@/api/global';
 import AppLink from '@/components/common/AppLink';
+import MoreBox from '@/components/general/MoreBox';
 
 type ToolbarType = {
   toggleMenuFunction?: () => void;
 };
 
 export default function Toolbar({ toggleMenuFunction }: ToolbarType) {
-  const t = useTranslations('Structure'); // Incorrect namespace
+  const t = useTranslations('Structure');
   const { setTrigger, dir, setMode, mode, loginFunction } = useContext(LayoutContext);
   const [showItems, setShowItems] = useState<string | number | null>(null);
+  const modeList = [
+    { ...config.modes?.[0], onClick: (item) => changeMode(item) },
+    { ...config.modes?.[1], onClick: (item) => changeMode(item) },
+  ];
   const toolbarIconList = [
     {
       id: 'more',
@@ -27,17 +32,26 @@ export default function Toolbar({ toggleMenuFunction }: ToolbarType) {
     },
     {
       id: 'modeBox',
-      icon: (
-        <span
-          className={styles.icon}
-          onClick={() => {
-            setShowItems('modeBox');
-          }}
-        >
-          {config?.modes?.find((x) => x.id === mode)?.icon}
-        </span>
-      ),
+      // icon: (
+      //   <span
+      //     className={styles.icon}
+      //     onClick={() => {
+      //       setShowItems('modeBox');
+      //     }}
+      //   >
+      //     {config?.modes?.find((x) => x.id === mode)?.icon}
+      //   </span>
+      // ),
       title: t('theme'),
+      icon: (
+        <MoreBox
+          icon={config?.modes?.find((x) => x.id === mode)?.icon}
+          id={'modeBox'}
+          selected={mode}
+          list={modeList}
+          // boxClassName={`${styles.boxClassName} ${styles[dir]}`}
+        />
+      ),
     },
     {
       id: 'notification',
@@ -75,7 +89,7 @@ export default function Toolbar({ toggleMenuFunction }: ToolbarType) {
           {toolbarIconList?.map((item, index) => (
             <div key={index} className={`${styles.changeModeIcon}`}>
               {item?.icon}
-              {showItems == item?.id && (
+              {/* {showItems == item?.id && (
                 <SelectItems
                   list={config.modes}
                   onClick={changeMode}
@@ -84,7 +98,7 @@ export default function Toolbar({ toggleMenuFunction }: ToolbarType) {
                   setShowItems={setShowItems}
                   id={item?.id}
                 />
-              )}
+              )} */}
             </div>
           ))}
         </div>
