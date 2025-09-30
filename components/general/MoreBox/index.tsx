@@ -10,6 +10,8 @@ interface MoreBoxType {
   boxClassName?: string;
   selected?: string;
   icon?: ReactNode;
+  iconStyle?: string;
+  className?: string;
 }
 export default function MoreBox({
   list = [],
@@ -17,23 +19,25 @@ export default function MoreBox({
   boxClassName = '',
   selected = '',
   icon = null,
+  iconStyle = '',
+  className = '',
 }: MoreBoxType) {
   const [showItems, setShowItems] = useState<string | number | null>(null);
   console.log('showItems==', showItems);
   return (
-    <div className={`${styles.container}`}>
+    <div className={`${styles.container} ${className}`}>
       <div
         onClick={() => {
           setShowItems(id);
         }}
-        className={`${styles.icon}`}
+        className={`${styles.icon} ${iconStyle}`}
       >
-        {icon ? icon : <ToolbarIcons.MoreIcon />}
+        {icon ? icon : <ToolbarIcons.MoreIcon className={`${styles.moreIcon}`} />}
       </div>
       {showItems == id && (
         <SelectItems
           list={list}
-          onClick={(item) => item?.onClick(item)}
+          // onClick={(x) => item?.onClick(x)}
           showItems={showItems}
           setShowItems={setShowItems}
           id={id}

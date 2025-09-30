@@ -1,0 +1,52 @@
+.firstSection {
+  margin-top: 0px;
+}
+
+.cardSection {
+  display: flex;
+  width: 100%;
+  min-width: 1000px;
+}
+
+.videoCard {
+  width: 25%;
+}
+.coverImage {
+  aspect-ratio: 3.99 !important;
+
+  /* width: 100px !important;
+  height: 100px !important;
+  aspect-ratio: unset !important; */
+}
+
+.boxClassName {
+  right: 0;
+  left: unset;
+  width: auto !important;
+  border-radius: var(--border-radius);
+}
+.boxClassName.rtl {
+  left: 0;
+  right: unset;
+}
+
+.imageMoreBox {
+  /* margin-right: unset;
+  margin-left: auto; */
+  position: absolute;
+  right: 0;
+  left: unset;
+  top: 100%;
+}
+.imageMoreBox.rtl {
+  /* margin-right: auto;
+  margin-left: unset; */
+  left: 0;
+  right: unset;
+}
+.uploadButton {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}

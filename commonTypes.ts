@@ -120,6 +120,15 @@ export type video = {
   uuid?: string | number;
 };
 
+export type playlist = {
+  id: number;
+  title: string;
+  channel: { name: string; fileImage: { name: string }; uuid: string; verified: boolean };
+  createdAt: Date;
+  view: number;
+  fileImage: { name: string };
+  uuid?: string | number;
+};
 export type TranslationFunction = (key: string, values?: Record<string, any>) => string;
 
 export type channel = {

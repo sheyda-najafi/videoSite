@@ -7,8 +7,9 @@ import AppImage from '@/components/common/AppImage';
 import { LayoutContext } from '@/context/LayoutContext';
 import AppLink from '@/components/common/AppLink';
 import Dot from '@/components/common/Dot';
-import ToolbarIcons from '@/icons/toolbar';
 import { video } from '@/commonTypes';
+import VerifiedIcon from '../VerifiedIcon';
+import View from './View';
 
 export default function VideoCard({ item, className = '' }: { item: video; className?: string }) {
   const t = useTranslations('video');
@@ -39,18 +40,10 @@ export default function VideoCard({ item, className = '' }: { item: video; class
           </AppLink>
           <div className={`${styles.details}`}>
             <AppLink href={`/channel/${item?.uuid}`}>{item?.channel?.name}</AppLink>
-            {item?.channel?.verified && (
-              <ToolbarIcons.verfiedIcon
-                width={'14px'}
-                height={'14px'}
-                className={`${styles.verfied}`}
-              />
-            )}
+            {item?.channel?.verified && <VerifiedIcon className={`${styles.verfied}`} />}
           </div>
           <div className={`${styles.details}`}>
-            <p>
-              {item?.view} {t(`view`)}
-            </p>
+            <View text={item?.view} />
             <Dot />
             <p>
               <DateComponent createdAt={item?.createdAt} t={t} />

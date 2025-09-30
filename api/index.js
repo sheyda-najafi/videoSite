@@ -20,5 +20,14 @@ const Api = {
   uploadImage: (body, myconfig = {}, query = '') => {
     return config.axiosHandle().post('v0/file/upload/images' + query, body, { ...myconfig });
   },
+  videoList: (params) => {
+    return config.axiosHandle().get('v1/videos', params);
+  },
+  videoList: (params) => {
+    return config.axiosHandle().get('v1/video/list', params);
+  },
+  playlistList: (params) => {
+    return config.axiosHandle().get('v1/playlist/list', params);
+  },
 };
 export default Api;

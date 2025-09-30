@@ -64,7 +64,8 @@
   width: 100%;
   height: auto;
 }
-.details * {
+.details *,
+.view {
   color: var(--text-third-color);
 }
 .verfied {

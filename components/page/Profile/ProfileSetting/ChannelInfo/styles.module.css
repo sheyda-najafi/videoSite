@@ -1,0 +1,35 @@
+.container {
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0;
+  margin-left: var(--primary-padding);
+}
+.container.rtl {
+  margin: 0;
+  margin-right: var(--primary-padding);
+}
+.name {
+  font-weight: 500;
+  font-size: 36px;
+}
+.nameContainer {
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.verified {
+  margin: 0 4px;
+}
+.text {
+  margin-bottom: 4px;
+}

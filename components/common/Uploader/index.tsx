@@ -1,22 +1,41 @@
-import React, { useContext, useRef, useState } from 'react';
-import axios from 'axios';
+import React, { useContext, useRef, useState, ChangeEvent } from 'react';
+import axios, {
+  CancelTokenSource,
+  AxiosRequestConfig,
+  AxiosResponse,
+  AxiosProgressEvent,
+} from 'axios';
 import Api from '@/api';
 import styles from './styles.module.css';
 import { LayoutContext } from '@/context/LayoutContext';
 
-const Uploader = ({
+type UploadType = 'image' | 'video' | 'music' | 'pdf' | string;
+
+interface UploaderProps {
+  id?: string;
+  onUploadComplete: (data: any) => void;
+  headTitle?: string;
+  children?: React.ReactNode;
+  uploadType?: UploadType;
+  api?: (formData: FormData, config: AxiosRequestConfig) => Promise<AxiosResponse<any>>;
+  showError?: boolean;
+  error?: string;
+  uploadButton?: React.ReactNode;
+}
+
+const Uploader: React.FC<UploaderProps> = ({
   id = 'uploader',
   onUploadComplete,
   headTitle,
-  childern,
+  children,
   uploadType = 'image',
   api = Api.uploadImage,
   showError = false,
-  error = 'این فیلد ضروری است.',
+  error = '',
   uploadButton,
 }) => {
-  const cancelTokenSource = useRef(axios.CancelToken.source());
-  const fileInputRef = useRef();
+  const cancelTokenSource = useRef<CancelTokenSource>(axios.CancelToken.source());
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
   const { setServerMessage } = useContext(LayoutContext);
 
   const [loading, setLoading] = useState(false);
@@ -25,14 +44,13 @@ const Uploader = ({
 
   const handleFileUpload = () => {
     if (fileInputRef.current) {
-      fileInputRef.current.value = ''; // ✅ always reset before opening
+      fileInputRef.current.value = ''; // ✅ reset before opening
+      fileInputRef.current.click();
     }
-    fileInputRef.current.click();
   };
 
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-
+  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
     if (!file) return;
 
     // recreate cancel token each time
@@ -46,10 +64,12 @@ const Uploader = ({
     setIsLoading(true);
     setProgress(0);
 
-    const config = {
-      onUploadProgress: (progressEvent) => {
-        const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
-        setProgress(percentCompleted);
+    const config: AxiosRequestConfig = {
+      onUploadProgress: (progressEvent: AxiosProgressEvent) => {
+        if (progressEvent.total) {
+          const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+          setProgress(percentCompleted);
+        }
       },
       cancelToken: cancelTokenSource.current.token,
     };
@@ -69,7 +89,6 @@ const Uploader = ({
         setProgress(0);
         setLoading(false);
 
-        // reset file input so same file can be picked again
         if (fileInputRef.current) {
           fileInputRef.current.value = '';
         }
@@ -80,15 +99,15 @@ const Uploader = ({
         setLoading(false);
       });
 
-    // ✅ also reset the input immediately after picking file
+    // ✅ reset immediately so same file can be picked again
     event.target.value = '';
   };
 
-  const handleCancel = (e) => {
+  const handleCancel = () => {
     cancelTokenSource.current.cancel('Upload canceled by the user.');
     setIsLoading(false);
     setProgress(0);
-    // ✅ Reset file input
+
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
     }
@@ -97,39 +116,16 @@ const Uploader = ({
   return (
     <div className={styles.container}>
       <p className={styles.description_teacher_button}>{headTitle ? headTitle : '  '}</p>
-      <div
-        onClick={() => {
-          handleFileUpload();
-        }}
-      >
-        {' '}
+      <div className={styles.buttonContainer} onClick={handleFileUpload}>
         {uploadButton}
       </div>
-      {childern}
-      {isLoading ? (
+      {children}
+      {isLoading && (
         <>
           <p>{`در حال بارگذاری... ${progress}%`}</p>
           <button onClick={handleCancel}>کنسل</button>
         </>
-      ) : (
-        <></>
       )}
-      {/* {showImg &&
-        (isLoading ? (
-          <>
-            <p>{`در حال بارگذاری... ${progress}%`}</p>
-            <button onClick={handleCancel}>کنسل</button>
-          </>
-        ) : (
-          uploadedFile && (
-            <div className={`${styles.uploadedFileStyle}`}>
-              <p>فایل آپلود شده:</p>
-              <a target="_blank" href={uploadedFile?.href ? uploadedFile?.href : ''}>
-                {uploadedFile?.name}
-              </a>
-            </div>
-          )
-        ))} */}
       <input
         key={progress + id}
         name="upload"
@@ -149,7 +145,7 @@ const Uploader = ({
         }
         onChange={handleFileChange}
       />
-      {showError == true && error && <p className={`inputError`}>{error}</p>}
+      {showError && error && <p className="inputError">{error}</p>}
     </div>
   );
 };

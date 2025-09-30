@@ -22,7 +22,7 @@
   left: 0;
 }
 .container.rtl .item {
-  direction: ltr;
+  /* direction: ltr; */
 }
 .container .item {
   box-sizing: border-box;
@@ -34,6 +34,15 @@
   cursor: pointer;
   padding: 8px 11px;
 }
+.container .item:hover {
+  background-color: var(--select-active-item);
+}
+.items.rtl {
+  flex-direction: row-reverse;
+}
+/* .container .item > div {
+  width: 100%;
+} */
 .container .item:last-child {
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);

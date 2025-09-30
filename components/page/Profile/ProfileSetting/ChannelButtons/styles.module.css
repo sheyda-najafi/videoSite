@@ -1,0 +1,21 @@
+.container {
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container button {
+  margin-right: unset;
+  margin-left: var(--primary-padding);
+}
+.container.rtl button {
+  margin-left: unset;
+  margin-right: var(--primary-padding);
+}
+.container button:last-child {
+  margin-left: 0px;
+  margin-right: 0px;
+}

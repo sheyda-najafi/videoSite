@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+  display: flex;
+  /* border-bottom: 1px solid #E9E9E9; */
+  cursor: pointer;
+}
+.menu {
+  width: 100% !important;
+  /* border-bottom: 1px solid #e9e9ef; */
+  border-bottom: 1px solid var(--dividerColor);
+  display: flex;
+}
+.menu div {
+  width: auto;
+}
+
+@media (max-width: 1099px) {
+  .container {
+    overflow-x: auto;
+    /* width: 803px;
+    min-width: 155px;
+    max-width: 688px; */
+    /* margin-left: 16px; */
+  }
+
+  .menu div {
+    width: auto;
+  }
+}

@@ -3,8 +3,13 @@
   display: flex;
   box-sizing: border-box;
   position: relative;
-  width: 24px;
+  /* width: 24px; */
 }
 .icon {
   cursor: pointer;
+  position: relative;
+}
+.moreIcon {
+  background-color: var(--select-active-item);
+  border-radius: 4px;
 }

@@ -1,0 +1,43 @@
+.container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.image {
+  /* aspect-ratio: 2; */
+  width: 160px;
+  height: 80px;
+  border-radius: var(--border-radius);
+}
+.content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: auto;
+  /* margin-top: 12px; */
+}
+.title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+}
+.iconContainer {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.contentwrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}

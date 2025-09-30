@@ -12,7 +12,9 @@
   background-color: #dcdfec;
   cursor: pointer;
 }
-
+.buttonContainer {
+  width: 100%;
+}
 .button__teacher_form {
   /* background-color: white !important; */
   border: 1px solid #c3c6d5 !important;
@@ -27,7 +29,7 @@
   cursor: pointer;
 }
 
-.button__teacher_form>img {
+.button__teacher_form > img {
   margin-left: 6px;
   cursor: pointer;
 }
@@ -50,5 +52,4 @@
   color: cornflowerblue;
   text-decoration: underline;
   margin: 0 4px;
-
 }

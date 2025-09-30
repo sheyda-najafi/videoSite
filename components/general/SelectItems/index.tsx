@@ -3,9 +3,9 @@ import styles from './styles.module.css';
 import { LayoutContext } from '@/context/LayoutContext';
 
 type SelectItemType = {
-  list: { id: string; title: string; icon: ReactNode }[];
+  list: { id: string; title: string; icon: ReactNode; onClick: (x: any) => void }[];
   className?: string;
-  onClick: (x: any) => void;
+  // onClick: (x: any) => void;
   selected?: string | number;
   id?: string;
   showItems?: string | number | null;
@@ -15,7 +15,7 @@ type SelectItemType = {
 export default function SelectItems({
   list = [],
   className = '',
-  onClick,
+  // onClick,
   selected,
   id = 'selectItem',
   showItems,
@@ -46,9 +46,9 @@ export default function SelectItems({
       {list?.map((item, index) => (
         <li
           key={item?.id}
-          className={`${selected == item?.id ? styles.selected : ''} ${styles.item}`}
+          className={`${selected == item?.id ? styles.selected : ''} ${styles.item} ${styles[dir]}`}
           onClick={() => {
-            onClick(item);
+            item?.onClick(item);
           }}
         >
           {item?.icon}

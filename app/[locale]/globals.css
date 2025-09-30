@@ -204,7 +204,9 @@ button {
 .secondButton * {
   color: var(--primary-button) !important;
 }
-
+.iconWrapper {
+  padding: 8px !important;
+}
 .wrapperStyle {
   box-sizing: border-box;
   display: flex;

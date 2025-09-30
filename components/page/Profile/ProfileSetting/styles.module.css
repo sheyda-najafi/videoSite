@@ -1,0 +1,56 @@
+.thumbnail {
+  width: 12vw !important;
+  height: 12vw !important;
+  aspect-ratio: unset !important;
+  border-radius: 50%;
+}
+.imageMoreBox {
+  top: 90%;
+}
+.boxClassName {
+  left: 0;
+  right: unset;
+  width: auto !important;
+  border-radius: var(--border-radius);
+}
+.boxClassName.rtl {
+  right: 0;
+  left: unset;
+}
+.imageContainer {
+  width: 12vw !important;
+}
+.wrapper {
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* flex-wrap: wrap; */
+}
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media screen and (max-width: 950px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .channelButtons {
+    flex-wrap: wrap;
+    /* justify-self: flex-start; */
+  }
+  .channelButtons button {
+    margin-top: 4px;
+  }
+  .channelButtons button {
+    margin-top: var(--primary-padding);
+  }
+}

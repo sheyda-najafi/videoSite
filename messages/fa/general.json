@@ -22,7 +22,14 @@
     "news": "خبر",
     "technology": "تکنولوژی",
     "upload": "آپلود",
-    "remove": "حذف"
+    "remove": "حذف",
+    "uploadVideos": "آپلود ویدیو",
+    "createPlaylist": "ایجاد لیست‌پخش",
+    "subscribe": "عضویت",
+    "home": "خانه",
+    "videos": "ویدیو",
+    "playlists": "لیست‌پخش",
+    "setting": "درباره"
   },
   "channel": {
     "subscribers": "دنبال‌کننده",

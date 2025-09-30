@@ -22,7 +22,14 @@
     "news": "News",
     "technology": "Technology",
     "upload": "Upload",
-    "remove": "Remove"
+    "remove": "Remove",
+    "uploadVideos": "Upload videos",
+    "createPlaylist": "Create Playlist",
+    "subscribe": "Subscribe",
+    "home": "Home",
+    "videos": "Videos",
+    "playlists": "Playlists",
+    "setting": "Setting"
   },
   "channel": {
     "subscribers": "subscribers",

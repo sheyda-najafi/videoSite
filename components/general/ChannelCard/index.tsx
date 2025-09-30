@@ -9,6 +9,8 @@ import AppLink from '@/components/common/AppLink';
 import Dot from '@/components/common/Dot';
 import ToolbarIcons from '@/icons/toolbar';
 import { channel } from '@/commonTypes';
+import VerifiedIcon from '../VerifiedIcon';
+import SubsciberVideos from './SubscriberVideos';
 
 export default function ChannelCard({
   item,
@@ -38,23 +40,9 @@ export default function ChannelCard({
         <div className={`${styles.textContainer}`}>
           <AppLink href={`/video/play/${item?.uuid}`} className={`${styles.titleContainer}`}>
             <h3 className={`${styles.title}`}>{item?.title}</h3>
-            {item?.verified && (
-              <ToolbarIcons.verfiedIcon
-                width={'14px'}
-                height={'14px'}
-                className={`${styles.verfied}`}
-              />
-            )}
+            {item?.verified && <VerifiedIcon className={`${styles.verfied}`} />}
           </AppLink>
-          <div className={`${styles.details}`}>
-            <p>
-              {item?.subscriber} {t(`subscribers`)}
-            </p>
-            <Dot />
-            <p>
-              {item?.videos} {t(`videos`)}
-            </p>
-          </div>
+          <SubsciberVideos item={{ subscriber: item?.subscriber, videos: item?.videos }} />
         </div>
       </div>
     </div>

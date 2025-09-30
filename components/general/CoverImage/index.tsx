@@ -2,19 +2,19 @@ import Banner from '@/components/general/Banner';
 import React, { ReactNode } from 'react';
 import styles from './styles.module.css';
 
-interface ChannelCoverType {
+interface CoverImageType {
   src?: string;
   className?: string;
   bannerClassName?: string;
   children?: ReactNode;
 }
 
-export default function ChannelCover({
+export default function CoverImage({
   src = '',
   className = '',
   bannerClassName = '',
   children = null,
-}: ChannelCoverType) {
+}: CoverImageType) {
   return (
     <div className={`${styles.container} ${className}`}>
       <Banner src={src} className={`${bannerClassName}`} />
